@@ -16,105 +16,121 @@
             font-family: 'Poppins', sans-serif;
         }
         .navbar {
-            background: linear-gradient(180deg, #ffffff 0%, #f3e8ff 100%);
-            padding: 1.75rem 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
         .navbar-brand img {
-            height: 70px;
+            height: 45px;
             transition: transform 0.3s ease;
         }
         .navbar-brand img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .nav-link {
             color: #6f42c1 !important;
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
             transition: color 0.3s ease;
         }
         .nav-link:hover {
             color: #5a339a !important;
         }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: #6f42c1;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
         .hero {
-            background: linear-gradient(rgba(111, 66, 193, 0.05), rgba(111, 66, 193, 0.05));
-            padding: 60px 0;
-            position: relative;
+            padding: 50px 0;
         }
         .hero-text {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 600;
             color: #6f42c1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             animation: fadeIn 1s ease-in;
         }
         .star-rating {
             color: #6f42c1;
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
             animation: fadeIn 1.2s ease-in;
         }
         .hero-img {
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease;
         }
         .hero-img:hover {
-            transform: scale(1.05);
+            opacity: 0.85;
         }
         .btn-donate {
             background-color: #6f42c1;
             border-color: #6f42c1;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding: 0.75rem 2.5rem;
-            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.5rem 2rem;
+            border-radius: 25px;
             color: #ffffff;
-            animation: pulse 2s infinite;
             transition: background-color 0.3s ease;
         }
         .btn-donate:hover {
             background-color: #5a339a;
             border-color: #5a339a;
         }
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
         footer {
             background-color: #6f42c1;
             color: #ffffff;
-            padding: 1.5rem;
-            max-width: 350px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 3rem;
+            padding: 1rem;
+            max-width: 300px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
         }
         .social-icons a {
             color: #ffffff;
-            font-size: 1.5rem;
-            margin-right: 1rem;
+            font-size: 1.2rem;
+            margin-right: 0.75rem;
             transition: color 0.3s ease;
         }
         .social-icons a:hover {
             color: #f3e8ff;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
         }
         @media (max-width: 768px) {
             .hero-text {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
             .star-rating {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
             .navbar-brand img {
-                height: 50px;
+                height: 35px;
+            }
+            .nav-link {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -165,14 +181,13 @@
                         <i class="bi bi-star-fill"></i>
                     </div>
                 </div>
-                <!-- Right: Image -->
+                <!-- Right: Image and Donate Button -->
                 <div class="col-md-6">
-                    <img src="https://www.ktpress.rw/wp-content/uploads/2023/02/Buses-2.jpg" alt="Buses" class="hero-img">
+                    <div class="image-container">
+                        <img src="https://www.ktpress.rw/wp-content/uploads/2023/02/Buses-2.jpg" alt="Buses" class="hero-img">
+                        <a href="#" class="btn btn-donate">Donate</a>
+                    </div>
                 </div>
-            </div>
-            <!-- Donate Button -->
-            <div class="text-center mt-5">
-                <a href="#" class="btn btn-donate">Donate</a>
             </div>
         </div>
     </section>
